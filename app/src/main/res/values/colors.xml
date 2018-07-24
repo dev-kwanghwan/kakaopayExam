@@ -8,4 +8,5 @@
     <color name="divider">#13000000</color>
     <color name="textGray">#e5e5e5</color>
     <color name="TextBlack">#232323</color>
+    <color name="white">#ffffff</color>
 </resources>

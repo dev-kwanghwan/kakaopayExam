@@ -4,6 +4,8 @@
 
     <data>
 
+        <import type="kakaopay.kwanghwan.app.statics.Constants" />
+
         <variable
             name="vm"
             type="kakaopay.kwanghwan.app.viewmodel.KakaoMediaItemViewModel" />
@@ -41,14 +43,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:background="@drawable/media_type_corner_border"
+                    android:background="@{vm.kakaoMedia.mediaType == Constants.KAKAO_MEDIA_TYPE_IMAGE ? @drawable/media_type_corner_border_image : @drawable/media_type_corner_border_video}"
                     android:gravity="center"
                     android:paddingBottom="2dp"
                     android:paddingLeft="4dp"
                     android:paddingRight="4dp"
                     android:paddingTop="2dp"
                     android:text="@{vm.mediaType}"
-                    android:textColor="#ffffff"
+                    android:textColor="@{vm.kakaoMedia.mediaType == Constants.KAKAO_MEDIA_TYPE_IMAGE ? @color/white : @color/colorAccent}"
                     android:textSize="12dp" />
 
                 <TextView
