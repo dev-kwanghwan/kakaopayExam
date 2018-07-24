@@ -11,6 +11,10 @@ object Constants {
     const val BASE_URL = "https://dapi.kakao.com"
     const val KAKAO_NATIVE_API_KEY = "KakaoAK ea19373f61549f4da1bc2acd4b6dac81"
 
+    //kakao rest api query
+    const val SORT_ACCURACY = "accuracy"
+    const val SORT_RECENCY = "recency"
+
     //media type
     const val KAKAO_MEDIA_TYPE_VIDEO = 1
     const val KAKAO_MEDIA_TYPE_IMAGE = 2

@@ -11,7 +11,6 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.functions.BiFunction
 import io.reactivex.schedulers.Schedulers
 import kakaopay.kwanghwan.app.BR
-import kakaopay.kwanghwan.app.ui.activity.HomeActivity
 import kakaopay.kwanghwan.app.api.RestfulAdapter
 import kakaopay.kwanghwan.app.interfaces.MediaService
 import kakaopay.kwanghwan.app.model.KakaoImage
@@ -20,6 +19,7 @@ import kakaopay.kwanghwan.app.model.KakaoVideo
 import kakaopay.kwanghwan.app.model.response.MediaMetaResponse
 import kakaopay.kwanghwan.app.recyclerview.adapter.KakaoMediaRecyclerViewAdapter
 import kakaopay.kwanghwan.app.statics.Constants
+import kakaopay.kwanghwan.app.ui.activity.HomeActivity
 
 class HomeActivityViewModel(var homeActivity: HomeActivity, private val mediaService: MediaService) : BaseObservable() {
     val adapter = KakaoMediaRecyclerViewAdapter()
@@ -59,10 +59,10 @@ class HomeActivityViewModel(var homeActivity: HomeActivity, private val mediaSer
         }
         val service = RestfulAdapter.apiService
         //kakaoImage 가져오기
-        val imageObservable = service.getKakaoImages(keyword)
+        val imageObservable = service.getKakaoImages(keyword, Constants.SORT_ACCURACY)
 
         //kakaoVideo 가져오기
-        val videoObservable = service.getKakaoVideos(keyword)
+        val videoObservable = service.getKakaoVideos(keyword, Constants.SORT_ACCURACY)
 
         //zip
         Single.zip(imageObservable, videoObservable, BiFunction<MediaMetaResponse<KakaoImage>, MediaMetaResponse<KakaoVideo>, Pair<MediaMetaResponse<KakaoImage>, MediaMetaResponse<KakaoVideo>>> { first, second -> Pair(first, second) })

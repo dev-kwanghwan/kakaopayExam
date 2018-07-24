@@ -9,8 +9,10 @@ import retrofit2.http.Query
 
 interface ApiService {
     @GET("v2/search/image")
-    fun getKakaoImages(@Query(value = "query", encoded = true) query: String): Single<MediaMetaResponse<KakaoImage>>
+    fun getKakaoImages(@Query(value = "query", encoded = true) query: String,
+                       @Query(value = "sort", encoded = true) sort: String): Single<MediaMetaResponse<KakaoImage>>
 
     @GET("v2/search/vclip")
-    fun getKakaoVideos(@Query(value = "query", encoded = true) query: String): Single<MediaMetaResponse<KakaoVideo>>
+    fun getKakaoVideos(@Query(value = "query", encoded = true) query: String,
+                       @Query(value = "sort", encoded = true) sort: String): Single<MediaMetaResponse<KakaoVideo>>
 }
