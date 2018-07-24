@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">카카오페이</string>
+    <string name="home_tab_search">검색</string>
+    <string name="home_tab_like">보관함</string>
+    <string name="search_hint">검색어를 입력해주세요</string>
+
+    <string name="kakao_media_type_video">동영상</string>
+    <string name="kakao_media_type_image">이미지</string>
+
+    <string name="kakao_media_datetime_format">yyyy-M-d hh시 mm분</string>
+</resources>
